@@ -1,0 +1,23 @@
+{
+  "name": "findar",
+  "version": "1.0.0",
+  "description": "Find and replace token",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "chalk": "^4.1.0",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0",
+    "figlet": "^1.5.0",
+    "flat": "^4.1.1",
+    "iconv-lite": "^0.6.2",
+    "prettyjson": "^1.2.1",
+    "prompts": "^2.4.0",
+    "sort-keys": "^4.1.0"
+  }
+}
