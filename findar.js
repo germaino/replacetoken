@@ -7,13 +7,13 @@ const fs = require('fs');
 const commandLineArgs = require('command-line-args')
 
 function logGreen(log) { console.log(chalk.green(log)) }
-function logRed(log) { console.log(chalk.yellow(log)) }
+function logRed(log) { console.log(chalk.red(log)) }
 function logGray(log) { console.log(chalk.gray(log)) }
 
 var myLibrary = require(__dirname + '/lib/index.js');
 var commands = require(__dirname + '/lib/commands.js');
 
-var context;
+var context = {};
 // console.log(context)
 
 /* first - parse the main command */
@@ -39,10 +39,7 @@ async function run(mainOptions) {
     case 'compute':
       const computeDefinitions = [
         { name: 'command', defaultOption: true, defaultValue: 'show' },
-        { name: 'flat', type: Boolean, alias: 'f' },
-        { name: 'block', alias: 'b' },
         { name: 'path', alias: 'p' },
-        { name: 'short', type: Boolean, alias: 's' },
         { name: 'input', alias: 'i' },
         { name: 'newName', alias: 'n' },
         { name: 'var', multiple: true },
@@ -67,8 +64,7 @@ async function run(mainOptions) {
       switch (computeOptions.command) {
 
         case 'replace':
-          await commands.computeShow(context, computeOptions, false)
-          await commands.computeReplace(context, computeOptions, config.config.replaceprefix)
+          await commands.computeReplace(context, computeOptions, "")
           break;
 
         default:
